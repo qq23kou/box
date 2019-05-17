@@ -1,15 +1,18 @@
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+  <div>
+    
+    
+  </div>
 </template>
-
 <script>
-    export default {
 
-    }
+export default {
+    name: 'app',
+    components: {
+    },
+    methods: {
+        goto(){
+        }
+    },
+}
 </script>
-
-<style>
-
-</style>

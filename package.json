@@ -9,10 +9,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.1",
     "iview": "^3.4.0",
-    "iview-area": "^1.5.16"
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
