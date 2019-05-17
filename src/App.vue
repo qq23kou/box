@@ -2,6 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Wonderful world"/>
+    <router-link to="main">跳转路由</router-link>
   </div>
 </template>
 <script>
