@@ -1,6 +1,12 @@
-a<template>
+<style lang="less">
+.Llogo{
+    
+}
+</style>
+<template>
   <div>
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img class="Llogo" alt="Vue logo" src="./assets/logo.png">
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -8,8 +14,8 @@ export default {
     components: {
     },
     methods: {
-        goto(){
-        }
     },
+    mounted () {
+    }
 }
 </script>
