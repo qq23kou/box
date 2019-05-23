@@ -9,8 +9,8 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['plugin:vue/recommended', 'eslint:recommended'],
-
+//   extends: ['plugin:vue/recommended', 'eslint:recommended'], // eslint 的严格模式
+  extends: ['plugin:vue/essential', 'eslint:recommended'],
   // add your custom rules here
   //it is base on https://github.com/vuejs/eslint-config-vue
   rules: {
@@ -23,7 +23,7 @@ module.exports = {
     }],
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline":"off",
-    "vue/name-property-casing": ["error", "PascalCase"],
+    "vue/name-property-casing": ["off", "PascalCase"], // 是否使用PascalCase 的这种方式命名参数，这种方式是每个单词的首字母大写的一种写法。
     "vue/no-v-html": "off",
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
@@ -53,7 +53,7 @@ module.exports = {
       'after': true
     }],
     'handle-callback-err': [2, '^(err|error)$'],
-    'indent': [2, 2, {
+    'indent': ["off", 4, {
       'SwitchCase': 1
     }],
     'jsx-quotes': [2, 'prefer-single'],
