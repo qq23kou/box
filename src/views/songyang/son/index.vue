@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard-container">
-        <div class="dashboard-text">name: 12312312321</div>
+        <div class="dashboard-text">欧拉欧拉欧拉欧拉欧拉欧拉欧拉欧拉！</div>
     </div>
 </template>
 
