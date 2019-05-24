@@ -42,6 +42,67 @@ export const constantRoutes = [{
     hidden: true
 },
 
+// 作者简介
+{
+    path: '/songyang',
+    component: Layout,
+    redirect: '/example/son',
+    name: 'songyang',
+    meta: {
+    title: '作者相关',
+    icon: 'dashboard'
+    },
+    children: [{
+        path: 'son',
+        name: 'son',
+        component: () => import('@/views/songyang/son/index'),
+        meta: {
+            title: '关于本人',
+            icon: 'dashboard'
+        }
+    },{
+        path: 'son2',
+        name: 'son2',
+        component: () => import('@/views/songyang/son/index2'),
+        meta: {
+            title: 'son2',
+            icon: 'dashboard'
+        }
+    }]
+},
+
+// 新增 代码 区域
+{
+    path: '/technology',
+    component: Layout,
+    redirect: '/technology/test',
+    name: 'technology',
+    children: [{
+        path: 'test',
+        name: 'test',
+        component: () => import('@/views/technology/test/index'),
+        meta: {
+            title: '代码相关',
+            icon: 'dashboard'
+        }
+    }]
+},
+// 新增技术文档 区域
+{
+    path: '/doc',
+    component: Layout,
+    redirect: '/doc/test',
+    name: 'doc',
+    children: [{
+        path: 'test',
+        name: 'test',
+        component: () => import('@/views/doc/test/index'),
+        meta: {
+            title: '文档相关',
+            icon: 'dashboard'
+        }
+    }]
+},
 {
     path: '/',
     component: Layout,
@@ -52,22 +113,6 @@ export const constantRoutes = [{
         component: () => import('@/views/dashboard/index'),
         meta: {
             title: 'Dashboard',
-            icon: 'dashboard'
-        }
-    }]
-},
-// 新增路由页面.
-{
-    path: '/songyang',
-    component: Layout,
-    redirect: '/songyang/son',
-    name: 'songyang',
-    children: [{
-        path: 'son',
-        name: 'son',
-        component: () => import('@/views/songyang/son/index'),
-        meta: {
-            title: 'son',
             icon: 'dashboard'
         }
     }]
