@@ -16,33 +16,32 @@ export default {
     name: 'son',
     computed: { // 组件引入
     },
-     data() {
-        return {
-            show: false,
-            password: ''
+    data() {
+    return {
+        show: false,
+        password: ''
+    }
+    },
+    methods: {
+    init () {
+    },
+    ok (){
+        if(this.password == "白金之星"){
+            this.$message({
+                message: '恭喜你回答成功。',
+                type: 'success'
+            });
+            this.show = true;
+        }else{
+            this.$message.error('我怀疑你根本不是替身使者。');
         }
-     },
-     methods: {
-            init () {
-            },
-            ok (){
-                if(this.password == "白金之星"){
-                    this.$message({
-                        message: '恭喜你回答成功。',
-                        type: 'success'
-                    });
-                    this.show = true;
-                }else{
-                    this.$message.error('我怀疑你根本不是替身使者。');
-                }
-            }
-        },
-        mounted () {
-            this.init();
-        }
+    }
+    },
+    mounted () {
+        this.init();
+    }
 }
 </script>
 
 <style lang="scss" scoped>
- @import '../../../styles/main.scss';
 </style>

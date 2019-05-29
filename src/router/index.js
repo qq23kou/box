@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 Vue.use(Router)
-
 /* Layout */
 import Layout from '@/layout'
 
@@ -24,46 +22,30 @@ import Layout from '@/layout'
     activeMenu: '/example/list'  if set path, the sidebar will highlight the path you set
 }
 */
-
 /**
  * constantRoutes
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
-export const constantRoutes = [{
-    path: '/login',
-    component: () => import('@/views/login/index'),
-    hidden: true
-},
+export const constantRoutes = [{path: '/login',component: () => import('@/views/login/index'),hidden: true},
 
-{
-    path: '/404',
-    component: () => import('@/views/404'),
-    hidden: true
-},
+{path: '/404',component: () => import('@/views/404'),hidden: true},
 
 // 作者简介
 {
-    path: '/songyang',
-    component: Layout,
-    redirect: '/example/son',
-    name: 'songyang',
+    path: '/',component: Layout,redirect: '/son',name: 'songyang',
     meta: {
-    title: '作者相关',
-    icon: 'dashboard'
+        title: '作者相关',
+        icon: 'dashboard'
     },
     children: [{
-        path: 'son',
-        name: 'son',
-        component: () => import('@/views/songyang/son/index'),
+        path: 'son',name: 'son',component: () => import('@/views/songyang/son/index'),
         meta: {
             title: '关于本人',
             icon: 'dashboard'
         }
     },{
-        path: 'son2',
-        name: 'son2',
-        component: () => import('@/views/songyang/son/index2'),
+        path: 'son2',name: 'son2',component: () => import('@/views/songyang/son/index2'),
         meta: {
             title: 'son2',
             icon: 'dashboard'
@@ -73,30 +55,30 @@ export const constantRoutes = [{
 
 // 新增 代码 区域
 {
-    path: '/technology',
-    component: Layout,
-    redirect: '/technology/test',
-    name: 'technology',
+    path: '/technology',component: Layout,redirect: '/technology/code1',name: 'technology',
+    meta: {
+        title: '代码相关',
+        icon: 'dashboard'
+    },
     children: [{
-        path: 'test',
-        name: 'test',
-        component: () => import('@/views/technology/test/index'),
+        path: 'code1',name: 'code1',component: () => import('@/views/technology/code/code1'),
         meta: {
             title: '代码相关',
+            icon: 'dashboard'
+        }
+    },{
+        path: 'code2',name: 'code2',component: () => import('@/views/technology/code/code2'),
+        meta: {
+            title: 'code2',
             icon: 'dashboard'
         }
     }]
 },
 // 新增技术文档 区域
 {
-    path: '/doc',
-    component: Layout,
-    redirect: '/doc/test',
-    name: 'doc',
+    path: '/doc',component: Layout,redirect: '/doc/doc1',name: 'doc',
     children: [{
-        path: 'test',
-        name: 'test',
-        component: () => import('@/views/doc/test/index'),
+        path: 'doc1',name: 'doc1',component: () => import('@/views/doc/doc/doc1'),
         meta: {
             title: '文档相关',
             icon: 'dashboard'
@@ -104,9 +86,7 @@ export const constantRoutes = [{
     }]
 },
 {
-    path: '/',
-    component: Layout,
-    redirect: '/dashboard',
+    path: '/dashboard',component: Layout,
     children: [{
         path: 'dashboard',
         name: 'Dashboard',
@@ -119,111 +99,86 @@ export const constantRoutes = [{
 },
 
 {
-    path: '/example',
-    component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
+    path: '/example',component: Layout,redirect: '/example/table',name: 'Example',
     meta: {
-    title: 'Example',
-    icon: 'example'
+        title: 'Example',
+        icon: 'example'
     },
     children: [{
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
+        path: 'table',name: 'Table',component: () => import('@/views/table/index'),
         meta: {
-        title: 'Table',
-        icon: 'table'
+            title: 'Table',
+            icon: 'table'
         }
     },
     {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
+        path: 'tree',name: 'Tree',component: () => import('@/views/tree/index'),
         meta: {
-        title: 'Tree',
-        icon: 'tree'
+            title: 'Tree',
+            icon: 'tree'
         }
     }
     ]
 },
 {
-    path: '/form',
-    component: Layout,
+    path: '/form',component: Layout,
     children: [{
-    path: 'index',
-    name: 'Form',
-    component: () => import('@/views/form/index'),
-    meta: {
-        title: 'Form',
-        icon: 'form'
-    }
+        path: 'index',name: 'Form',component: () => import('@/views/form/index'),
+        meta: {
+            title: 'Form',
+            icon: 'form'
+        }
     }]
 },
 {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
+    path: '/nested',component: Layout,redirect: '/nested/menu1',name: 'Nested',
     meta: {
-    title: 'Nested',
-    icon: 'nested'
+        title: 'Nested',
+        icon: 'nested'
     },
     children: [{
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
+        path: 'menu1',component: () => import('@/views/nested/menu1/index'), // Parent router-viewname: 'Menu1',
         meta: {
-        title: 'Menu1'
+            title: 'Menu1'
         },
         children: [{
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
+            path: 'menu1-1',component: () => import('@/views/nested/menu1/menu1-1'),
             name: 'Menu1-1',
-            meta: {
-            title: 'Menu1-1'
+                meta: {
+                title: 'Menu1-1'
             }
         },
         {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
+            path: 'menu1-2',component: () => import('@/views/nested/menu1/menu1-2'),name: 'Menu1-2',
             meta: {
-            title: 'Menu1-2'
+                title: 'Menu1-2'
             },
             children: [{
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
+                path: 'menu1-2-1',component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),name: 'Menu1-2-1',
                 meta: {
-                title: 'Menu1-2-1'
+                    title: 'Menu1-2-1'
                 }
             },
             {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
+                path: 'menu1-2-2',component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),name: 'Menu1-2-2',
                 meta: {
-                title: 'Menu1-2-2'
+                    title: 'Menu1-2-2'
                 }
             }
             ]
         },
         {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
+            path: 'menu1-3',component: () => import('@/views/nested/menu1/menu1-3'),name: 'Menu1-3',
             meta: {
-            title: 'Menu1-3'
+                title: 'Menu1-3'
             }
         }
         ]
     },
     {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
+        path: 'menu2',component: () => import('@/views/nested/menu2/index'),
         meta: {
-        title: 'menu2'
+            title: 'menu2'
         }
     }
     ]
@@ -241,12 +196,9 @@ export const constantRoutes = [{
     }]
 },
 
-    // 404 page must be placed at the end !!!
-    {
-        path: '*',
-        redirect: '/404',
-        hidden: true
-    }
+// 404 page must be placed at the end !!!
+{path: '*',redirect: '/404',hidden: true}
+
 ]
 
 const createRouter = () => new Router({
